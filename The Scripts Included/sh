@@ -1,0 +1,65 @@
+#!/bin/sh2
+# -*- coding: utf-8 -*-
+#/*shsh 伪终端脚本*/
+# 作者 ： Jessarin000
+# 日期 ： 2023-12-02
+# 版本 ： 2.3
+#
+##注意：·本脚本需使用 sh 运行。运行前请修改配置或名称。
+##     ·本脚本用于创建SSH 蜜罐。请将本脚本置于可控的隔离环境的 /bin/ 目录下。
+##     ·遇到任何问题或错误请联系作者。
+##     ·请检查本文件第 33 行中的主机名是否正确。
+#
+#######################################################################
+##                %警告：可能对系统产生非预期的影响！%                     ##
+##              %建议在虚拟环境（VM或Docker）下运行！%                    ##
+##                                                                   ##
+##    %Warning: There may be an unexpected impact on the system!%    ##
+##      %It is recommended to run under a virtual environment %      ##
+##                     %!(VM or Docker)!%                            ##
+#######################################################################
+
+echo "=================================================================================================+";
+echo "";
+echo "欢迎你，Kali2023。";
+
+trap 'printf "\n";' INT TERM;
+
+CMD_FILE_PATH="/bin/.sh_commandhistory.txt";
+RES_FILE_PATH="/bin/.sh_result.txt";
+
+while true
+do
+	printf "\n\033[1;32mkali2023@{LINGCHANT6}\033[0m\033[1m:\033[1;34m%s\033[0m\$ " "$(pwd)";
+	read -r COMMAND;
+	if [ "$COMMAND" = "cat /bin/sh" ] \
+	|| [ "$COMMAND" = "cat ./bin/sh" ] \
+	|| [ "$COMMAND" = "cat ./sh" ];then
+		echo "$(pwd)  : $COMMAND" >>"$CMD_FILE_PATH" 2>/dev/null;
+		printf "/bin/sh:0:Access is denied.\n";
+		echo "$(pwd)  : /bin/sh:0:Access is denied." >>"$RES_FILE_PATH" 2>/dev/null;
+		continue;
+	fi
+	if [ "$(pwd)" = "/bin" ];then
+		if [ "$COMMAND" = "cat ./sh" ] \
+		|| [ "$COMMAND" = "cat sh" ];then
+			echo "$(pwd)  : $COMMAND" >>"$CMD_FILE_PATH" 2>/dev/null;
+			printf "/bin/sh:0:Access is denied.\n";
+			echo "$(pwd)  : /bin/sh:0:Access is denied." >>"$RES_FILE_PATH" 2>/dev/null;
+			continue;
+		fi
+	elif [ "$COMMAND" = "cat /bin/sh" ] \
+	|| [ "$COMMAND" = "cat ./bin/sh" ];then
+		echo "$(pwd)  : $COMMAND" >>"$CMD_FILE_PATH" 2>/dev/null;
+		printf "/bin/sh:0:Access is denied.";
+		echo "$(pwd)  : /bin/sh:0:Access is denied." >>"$RES_FILE_PATH" 2>/dev/null;
+		continue;
+	fi
+	$COMMAND;
+	RESULT="$($COMMAND 2>&1 0>&1)";
+	#tty=$(w |grep root |awk  '{ print $2 }')
+	#/dev/$tty < $result
+	echo "$(pwd)  : $COMMAND" >>"$CMD_FILE_PATH" 2>/dev/null;
+	echo "$(pwd)  : $RESULT" >>"$RES_FILE_PATH" 2>/dev/null;
+done
+
