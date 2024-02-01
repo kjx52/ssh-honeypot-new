@@ -22,6 +22,8 @@
 在*Win_Deployment_Program*目录下有使用NSIS完成封装的安装程序，运行后即可将所有部件添加至*C:\Users\Public\SSHShell*文件夹及桌面。
 由于本项目特殊性，请在运行安装程序后以管理员的身份运行*SSH_Deployment_Program.exe*，以自动化设置文件权限以及添加弱口令用户。
 
+本项目已添加的命令补丁可以从Patch目录下找到。
+
 详细信息请看 SSH_Deployment_Program.exe。
 > 本项目：
 >>        默认创建账户为 kali，密码为 kjx00000；
@@ -29,7 +31,7 @@
 >>        默认无法创建文件。
 >>        默认蜜罐终端为 Bacsh。
 >>        默认情况下，攻击者在蜜罐中可使用的命令为：cd，ls，cat，cls，pwd以及它们的别名。
->>        补丁添加的命令为：whoami，hostname，id，touch，mkdir和rm，可以从Patch目录下找到它们。 
+>>        补丁添加的命令为：whoami，hostname，id，touch，mkdir和rm。 
 
 ****(注意：本项目的正常执行与配套终端 Bacsh 有着直接联系，除非你确定你已经有了更好的选择，否则强烈不建议修改 SSHD 终端配置！)****
 
