@@ -11,14 +11,14 @@
 
 /*
  Bacsh 6.5
- ×÷Õß£º Jessarin000
- ÈÕÆÚ£º 2024-02-01 
+ ä½œè€…ï¼š Jessarin000
+ æ—¥æœŸï¼š 2024-02-01 
 */
 
 /*
- ±¾³ÌĞòÒÑÊ¹ÓÃÃüÁî²¹¶¡¡£
- Ä¬ÈÏ¿ÉÊ¹ÓÃÃüÁîÎª£º¡°cat¡±¡¢¡°cd¡±¡¢¡°cls¡±¡¢¡°ls¡± ºÍ ¡°pwd¡± ÒÔ¼°ËüÃÇµÄ±ğÃû¡£ 
- ²¹¶¡Ìí¼ÓµÄÃüÁîÎª£º¡°whoami¡±¡¢¡°hostname¡±¡¢¡°id¡±¡¢¡°touch¡±¡¢¡°mkdir¡±ºÍ¡°rm¡±¡£ 
+ æœ¬ç¨‹åºå·²ä½¿ç”¨å‘½ä»¤è¡¥ä¸ã€‚
+ é»˜è®¤å¯ä½¿ç”¨å‘½ä»¤ä¸ºï¼šâ€œcatâ€ã€â€œcdâ€ã€â€œclsâ€ã€â€œlsâ€ å’Œ â€œpwdâ€ ä»¥åŠå®ƒä»¬çš„åˆ«åã€‚ 
+ è¡¥ä¸æ·»åŠ çš„å‘½ä»¤ä¸ºï¼šâ€œwhoamiâ€ã€â€œhostnameâ€ã€â€œidâ€ã€â€œtouchâ€ã€â€œmkdirâ€å’Œâ€œrmâ€ã€‚ 
 */
 
 time_t Cur_Time;
@@ -27,7 +27,7 @@ char Time_Handel[80];
 
 //=====================================================
 
-//ÒÔÏÂÎªÄ¬ÈÏ´æ´¢Â·¾¶¡£
+//ä»¥ä¸‹ä¸ºé»˜è®¤å­˜å‚¨è·¯å¾„ã€‚
 char Env_Path[]="C:\\Users\\kali\\tmp1.txt";
 char Cmd_Log_Path[]="C:\\Users\\Public\\History\\Command.txt";
 char Res_Log_Path[]="C:\\Users\\Public\\History\\Result.txt";
@@ -92,7 +92,7 @@ int Chroot(char *Path_Flag_02,char *Path_Flag_03,char *Command,char *Function_St
 		{
 			chdir("C:\\Users\\kali\\Shell\\");
 			Tmp_Flag_01=2;
-			printf("[\033[32m+\033[0m] \033[32mµ±Ç°¹¤×÷Ä¿Â¼£º C:\\\033[0m\n");
+			printf("[\033[32m+\033[0m] \033[32må½“å‰å·¥ä½œç›®å½•ï¼š C:\\\033[0m\n");
 			strcpy(Path_Flag_03,Root_Path);
 			Path_Flag_01=1;
 		}
@@ -102,7 +102,7 @@ int Chroot(char *Path_Flag_02,char *Path_Flag_03,char *Command,char *Function_St
 			chdir("C:\\Users\\kali\\Shell\\home\\kali");
 			Tmp_Flag_01=2;
 			
-			printf("[\033[32m+\033[0m] \033[32mµ±Ç°¹¤×÷Ä¿Â¼£º C:\\home\\kali\033[0m\n");
+			printf("[\033[32m+\033[0m] \033[32må½“å‰å·¥ä½œç›®å½•ï¼š C:\\home\\kali\033[0m\n");
 			strcpy(Path_Flag_03,Root_Path);
 			Path_Flag_01=1;
 		}
@@ -111,13 +111,13 @@ int Chroot(char *Path_Flag_02,char *Path_Flag_03,char *Command,char *Function_St
 	{
 		if(Path_Flag_02[1]!=':')
 		{
-			printf("[\033[33m!\033[0m] \033[33mÇëÊäÈë¾ø¶ÔÂ·¾¶¡£ WarningCode:05\n\033[0m");
+			printf("[\033[33m!\033[0m] \033[33mè¯·è¾“å…¥ç»å¯¹è·¯å¾„ã€‚ WarningCode:05\n\033[0m");
 		}
 		else
 		{
 			if(Path_Flag_02[0]!='c' && Path_Flag_02[0]!='C')
 			{
-				printf("[\033[33m!\033[0m] \033[33m½ö¿ÉÒÔÊäÈëCÅÌ¾ø¶ÔÂ·¾¶¡£ WarningCode:14\n\033[0m"); 
+				printf("[\033[33m!\033[0m] \033[33mä»…å¯ä»¥è¾“å…¥Cç›˜ç»å¯¹è·¯å¾„ã€‚ WarningCode:14\n\033[0m"); 
 			}
 			else
 			{
@@ -126,7 +126,7 @@ int Chroot(char *Path_Flag_02,char *Path_Flag_03,char *Command,char *Function_St
 					chdir("C:\\Users\\kali\\Shell\\");
 					Tmp_Flag_01=2;
 					
-					printf("[\033[32m+\033[0m] \033[32mµ±Ç°¹¤×÷Ä¿Â¼£º C:\\\033[0m\n");
+					printf("[\033[32m+\033[0m] \033[32må½“å‰å·¥ä½œç›®å½•ï¼š C:\\\033[0m\n");
 					char Root_Path[]="C:\\";
 					strcpy(Path_Flag_03,Root_Path);
 					Path_Flag_01=1;
@@ -144,7 +144,7 @@ int Chroot(char *Path_Flag_02,char *Path_Flag_03,char *Command,char *Function_St
 					{
 						if((access(Isolate_Path,R_OK))!=-1)
 						{
-							printf("[\033[32m+\033[0m] \033[32mµ±Ç°¹¤×÷Ä¿Â¼£º%s\033[0m\n",Path_Flag_02);
+							printf("[\033[32m+\033[0m] \033[32må½“å‰å·¥ä½œç›®å½•ï¼š%s\033[0m\n",Path_Flag_02);
 							chdir(Isolate_Path);
 							memset(Isolate_Path_02,0,sizeof(Isolate_Path_02));
 							strcpy(Isolate_Path_02,Isolate_Path);
@@ -154,27 +154,27 @@ int Chroot(char *Path_Flag_02,char *Path_Flag_03,char *Command,char *Function_St
 						}
 						else
 						{
-							printf("[\033[31m-\033[0m] ¾Ü¾ø·ÃÎÊ¡£\n");
+							printf("[\033[31m-\033[0m] æ‹’ç»è®¿é—®ã€‚\n");
 							if(Path_Flag_03==NULL)
 							{
-								printf("[\033[32m+\033[0m] \033[32mµ±Ç°¹¤×÷Ä¿Â¼£º%s\033[0m\n",getcwd(NULL,NULL));
+								printf("[\033[32m+\033[0m] \033[32må½“å‰å·¥ä½œç›®å½•ï¼š%s\033[0m\n",getcwd(NULL,NULL));
 							}
 							else
 							{
-								printf("[\033[32m+\033[0m] \033[32mµ±Ç°¹¤×÷Ä¿Â¼£º%s\033[0m\n",Path_Flag_03);
+								printf("[\033[32m+\033[0m] \033[32må½“å‰å·¥ä½œç›®å½•ï¼š%s\033[0m\n",Path_Flag_03);
 							}
 						}
 					}
 					else
 					{
-						printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+						printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 						if(Path_Flag_03==NULL)
 						{
-							printf("[\033[32m+\033[0m] \033[32mµ±Ç°¹¤×÷Ä¿Â¼£º%s\033[0m\n",getcwd(NULL,NULL));
+							printf("[\033[32m+\033[0m] \033[32må½“å‰å·¥ä½œç›®å½•ï¼š%s\033[0m\n",getcwd(NULL,NULL));
 						}
 						else
 						{
-							printf("[\033[32m+\033[0m] \033[32mµ±Ç°¹¤×÷Ä¿Â¼£º%s\033[0m\n",Path_Flag_03);
+							printf("[\033[32m+\033[0m] \033[32må½“å‰å·¥ä½œç›®å½•ï¼š%s\033[0m\n",Path_Flag_03);
 						}
 					}
 				}
@@ -260,12 +260,12 @@ int Cat_Detect(char *Function_String,char *Command,char *Path_Flag_02)
 	}
 	if(Open)
 	{
-		printf("[\033[33m!\033[0m] \033[33mÇëÊäÈë¾ø¶ÔÂ·¾¶¡£ WarningCode:06\n\033[0m"); 
+		printf("[\033[33m!\033[0m] \033[33mè¯·è¾“å…¥ç»å¯¹è·¯å¾„ã€‚ WarningCode:06\n\033[0m"); 
 		return 001;
 	}
 	if(Path_Flag_02[1]!=':')
 	{
-		printf("[\033[33m!\033[0m] \033[33mÇëÊäÈë¾ø¶ÔÂ·¾¶¡£ WarningCode:07\n\033[0m"); 
+		printf("[\033[33m!\033[0m] \033[33mè¯·è¾“å…¥ç»å¯¹è·¯å¾„ã€‚ WarningCode:07\n\033[0m"); 
 		return 001;
 	}
 	
@@ -285,12 +285,12 @@ int Cat_Detect(char *Function_String,char *Command,char *Path_Flag_02)
 		}
 		else
 		{
-			printf("[\033[31m-\033[0m] ¾Ü¾ø·ÃÎÊ¡£\n");
+			printf("[\033[31m-\033[0m] æ‹’ç»è®¿é—®ã€‚\n");
 		}
 	}
 	else
 	{
-		printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨µÄÎÄ¼ş¡£\n");
+		printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šçš„æ–‡ä»¶ã€‚\n");
 	}
 	
 	time(&Cur_Time);
@@ -494,20 +494,20 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 	Tmp_Flag_01=0;
 	if(Path_Flag_02[0]==0 || sizeof(Path_Flag_02)==0)
 	{
-		printf("[\033[31m-\033[0m] touch £º ÎŞĞ§²ÎÊı¡£\n");
-		printf("[?] ÇëÊ¹ÓÃ touch -h ÏÔÊ¾°ïÖú¡£\n");
+		printf("[\033[31m-\033[0m] touch ï¼š æ— æ•ˆå‚æ•°ã€‚\n");
+		printf("[?] è¯·ä½¿ç”¨ touch -h æ˜¾ç¤ºå¸®åŠ©ã€‚\n");
 		Tmp_Flag_01=2;
 		Return_Code_01=13;
 	}
 	if(memcmp(Path_Flag_02,"-h",2)==0 && Tmp_Flag_01!=2)
 	{
-		printf("[\033[32m+\033[0m] ÓÃ·¨£ºtouch [ÃüÁî²ÎÊı]... ÎÄ¼şÃû...\n");
-		printf("±¾ÃüÁîÓÃÓÚ½«Ö¸¶¨ÎÄ¼şµÄ·ÃÎÊºÍĞŞ¸ÄÊ±¼ä¸üĞÂÎªµ±Ç°Ê±¼ä¡£\n\n");
-		printf("ÈôÖ¸¶¨ÎÄ¼ş²»´æÔÚ£¬Ôò»áĞÂ½¨Ò»¸öÍ¬ÎÄ¼şÃûµÄ¿ÕÎÄ¼ş¡£\n"); 
-		printf("  ²ÎÊı£º\n");
-		printf("\t-h\tÏÔÊ¾´Ë°ïÖú²¢ÍË³ö¡£\n");
-		printf("\t-v\tÏÔÊ¾°æ±¾ĞÅÏ¢²¢ÍË³ö¡£\n\n");
-		printf("ÓĞÈÎºÎÒâ¼û»ò½¨ÒéÇëÁªÏµ×÷Õß <\033[1;4mkjx52@outlook.com\033[0m>¡£\n");
+		printf("[\033[32m+\033[0m] ç”¨æ³•ï¼štouch [å‘½ä»¤å‚æ•°]... æ–‡ä»¶å...\n");
+		printf("æœ¬å‘½ä»¤ç”¨äºå°†æŒ‡å®šæ–‡ä»¶çš„è®¿é—®å’Œä¿®æ”¹æ—¶é—´æ›´æ–°ä¸ºå½“å‰æ—¶é—´ã€‚\n\n");
+		printf("è‹¥æŒ‡å®šæ–‡ä»¶ä¸å­˜åœ¨ï¼Œåˆ™ä¼šæ–°å»ºä¸€ä¸ªåŒæ–‡ä»¶åçš„ç©ºæ–‡ä»¶ã€‚\n"); 
+		printf("  å‚æ•°ï¼š\n");
+		printf("\t-h\tæ˜¾ç¤ºæ­¤å¸®åŠ©å¹¶é€€å‡ºã€‚\n");
+		printf("\t-v\tæ˜¾ç¤ºç‰ˆæœ¬ä¿¡æ¯å¹¶é€€å‡ºã€‚\n\n");
+		printf("æœ‰ä»»ä½•æ„è§æˆ–å»ºè®®è¯·è”ç³»ä½œè€… <\033[1;4mkjx52@outlook.com\033[0m>ã€‚\n");
 		
 		Tmp_Flag_01=2;
 		Return_Code_01=0;
@@ -515,33 +515,33 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 	if(memcmp(Path_Flag_02,"-v",2)==0 && Tmp_Flag_01!=2)
 	{
 		printf("touch 1.02\n");
-		printf("°æÈ¨ËùÓĞ (C) 2023 Indie developers, Inc.\n\n");
+		printf("ç‰ˆæƒæ‰€æœ‰ (C) 2023 Indie developers, Inc.\n\n");
 		printf("Written by Jessarin\n");
 		Tmp_Flag_01=2;
 		Return_Code_01=0;
 	}
 	if(Target(Path_Flag_02,Error_C)==1 && Tmp_Flag_01!=2)
 	{
-		printf("[\033[31m-\033[0m] touch £º ÎŞĞ§²ÎÊı¡£\n");
-		printf("[?] ÇëÊ¹ÓÃ touch -h ÏÔÊ¾°ïÖú¡£\n");
+		printf("[\033[31m-\033[0m] touch ï¼š æ— æ•ˆå‚æ•°ã€‚\n");
+		printf("[?] è¯·ä½¿ç”¨ touch -h æ˜¾ç¤ºå¸®åŠ©ã€‚\n");
 		Tmp_Flag_01=2;
 		Return_Code_01=13;
 	}
 	if(strlen(Path_Flag_02)==1 && Path_Flag_02[0]=='/' && Tmp_Flag_01!=2)
 	{
-		printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+		printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 		Tmp_Flag_01=2;
 		Return_Code_01=4;
 	}
 	if(Tmp_Flag_02==2 && Tmp_Flag_01!=2)
 	{
-		printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+		printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 		Tmp_Flag_01=2;
 		Return_Code_01=3;
 	}
 	if(Path_Flag_02[0]==':' && Tmp_Flag_01!=2)
 	{
-		printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+		printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 		Tmp_Flag_01=2;
 		Return_Code_01=3;
 	}
@@ -549,7 +549,7 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 	{
 		if(Tmp_Flag_04==3 || Path_Flag_02[strlen(Path_Flag_02)-1]=='/')
 		{
-		    printf("[\033[31m-\033[0m]\033[31m touch : ÇëÇóÎŞ·¨Íê³É£¬\"%s\" ÊÇÒ»¸öÄ¿Â¼¡£\n\033[0m",Path_Flag_02);
+		    printf("[\033[31m-\033[0m]\033[31m touch : è¯·æ±‚æ— æ³•å®Œæˆï¼Œ\"%s\" æ˜¯ä¸€ä¸ªç›®å½•ã€‚\n\033[0m",Path_Flag_02);
 		    Tmp_Flag_01=2;
 		    Return_Code_01=1;
 		}
@@ -564,7 +564,7 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 		{
 			if(Tmp_Flag_09[Tmp_Flag_04]==':' || Tmp_Flag_09[Tmp_Flag_04]=='/')
 			{
-				printf("[\033[31m-\033[0m]\033[31m touch : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎªÎÄ¼şÃûÖĞ²»ÄÜ°üº¬ÒÔÏÂÈÎÒ»×Ö·û£º\n\t  ¡°/¡± ¡°\\¡± ¡°:¡± ¡°*¡± ¡°\?¡± ¡°\"¡± ¡°<¡± ¡°>¡± ¡°|¡±\n\033[0m");
+				printf("[\033[31m-\033[0m]\033[31m touch : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºæ–‡ä»¶åä¸­ä¸èƒ½åŒ…å«ä»¥ä¸‹ä»»ä¸€å­—ç¬¦ï¼š\n\t  â€œ/â€ â€œ\\â€ â€œ:â€ â€œ*â€ â€œ\?â€ â€œ\"â€ â€œ<â€ â€œ>â€ â€œ|â€\n\033[0m");
 				Tmp_Flag_01=2;
 				Return_Code_01=11;
 			}
@@ -576,21 +576,21 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 		{
 			if(Path_Flag_02[1]!=':')
 			{
-				printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+				printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 				Return_Code_01=5;
 			}
 			else
 			{
 				if(Path_Flag_02[0]!='c' && Path_Flag_02[0]!='C')
 				{
-					printf("[\033[31m-\033[0m]\033[31m ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n\033[0m");
+					printf("[\033[31m-\033[0m]\033[31m ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n\033[0m");
 					Return_Code_01=6;
 				}
 				else
 				{
 					if(strlen(Path_Flag_02)==2)
 					{
-						printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+						printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 						Return_Code_01=7;
 					}
 					else
@@ -625,7 +625,7 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 									}
 									
 									memset(Env_Path_03,0,sizeof(Env_Path_03));
-									printf("[\033[32m+\033[0m] ÎÄ¼ş´´½¨³É¹¦£º%s ¡£\n",Tmp_Flag_09);
+									printf("[\033[32m+\033[0m] æ–‡ä»¶åˆ›å»ºæˆåŠŸï¼š%s ã€‚\n",Tmp_Flag_09);
 									Return_Code_01=0;
 								}
 								else
@@ -635,13 +635,13 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 							}
 							else
 							{
-								printf("[\033[31m-\033[0m] ¾Ü¾ø·ÃÎÊ¡£\n");
+								printf("[\033[31m-\033[0m] æ‹’ç»è®¿é—®ã€‚\n");
 								Return_Code_01=7;
 							}
 						}
 						else
 						{
-							printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+							printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 							Return_Code_01=8;
 						}
 					}
@@ -682,7 +682,7 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 							}
 							
 							memset(Env_Path_03,0,sizeof(Env_Path_03));
-							printf("[\033[32m+\033[0m] ÎÄ¼ş´´½¨³É¹¦£º%s ¡£\n",Tmp_Flag_09);
+							printf("[\033[32m+\033[0m] æ–‡ä»¶åˆ›å»ºæˆåŠŸï¼š%s ã€‚\n",Tmp_Flag_09);
 							Return_Code_01=0;
 						}
 						else
@@ -692,13 +692,13 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 					}
 					else
 					{
-						printf("[\033[31m-\033[0m] ¾Ü¾ø·ÃÎÊ¡£\n");
+						printf("[\033[31m-\033[0m] æ‹’ç»è®¿é—®ã€‚\n");
 						Return_Code_01=7;
 					}
 				}
 				else
 				{
-					printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+					printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 					Return_Code_01=8;
 				}
 			}
@@ -739,7 +739,7 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 							}
 							
 							memset(Env_Path_03,0,sizeof(Env_Path_03));
-							printf("[\033[32m+\033[0m] ÎÄ¼ş´´½¨³É¹¦£º%s ¡£\n",Tmp_Flag_09);
+							printf("[\033[32m+\033[0m] æ–‡ä»¶åˆ›å»ºæˆåŠŸï¼š%s ã€‚\n",Tmp_Flag_09);
 							Return_Code_01=0;
 						}
 						else
@@ -749,13 +749,13 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 					}
 					else
 					{
-						printf("[\033[31m-\033[0m] ¾Ü¾ø·ÃÎÊ¡£\n");
+						printf("[\033[31m-\033[0m] æ‹’ç»è®¿é—®ã€‚\n");
 						Return_Code_01=9;
 					}
 				}
 				else
 				{
-					printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+					printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 					Return_Code_01=10;
 				}
 			}
@@ -786,14 +786,14 @@ int Touch_File(char *Ac_Command,char *Function_String,char *Home_Path,char (*Cre
 		{
 			FILE*Touch_Result2;
 			Touch_Result2=fopen(Res_Log_Path,"a");
-			fprintf(Touch_Result2,"[%s]\t# %s :(touch) ÎÄ¼ş¸üĞÂ¡£·µ»ØÖµ£º12\n",Time_Handel,getcwd(NULL,NULL));
+			fprintf(Touch_Result2,"[%s]\t# %s :(touch) æ–‡ä»¶æ›´æ–°ã€‚è¿”å›å€¼ï¼š12\n",Time_Handel,getcwd(NULL,NULL));
 			fclose(Touch_Result2);
 		}
 		else
 		{
 			FILE*Touch_Result2;
 			Touch_Result2=fopen(Res_Log_Path,"a");
-			fprintf(Touch_Result2,"[%s]\t# %s :(touch) ÎÄ¼ş´´½¨Ê§°Ü¡£·µ»ØÖµ£º%d\n",Time_Handel,getcwd(NULL,NULL),Return_Code_01);
+			fprintf(Touch_Result2,"[%s]\t# %s :(touch) æ–‡ä»¶åˆ›å»ºå¤±è´¥ã€‚è¿”å›å€¼ï¼š%d\n",Time_Handel,getcwd(NULL,NULL),Return_Code_01);
 			fclose(Touch_Result2);
 		}
 	}
@@ -890,19 +890,19 @@ int Make_Directories(char *Ac_Command,char *Function_String,char *Home_Path,char
 	Tmp_Flag_05=0;
 	if(Path_Flag_03[0]==0 || sizeof(Path_Flag_03)==0)
 	{
-		printf("[\033[31m-\033[0m] mkdir £º ÎŞĞ§²ÎÊı¡£\n");
-		printf("[?] ÇëÊ¹ÓÃ mkdir -h ÏÔÊ¾°ïÖú¡£\n");
+		printf("[\033[31m-\033[0m] mkdir ï¼š æ— æ•ˆå‚æ•°ã€‚\n");
+		printf("[?] è¯·ä½¿ç”¨ mkdir -h æ˜¾ç¤ºå¸®åŠ©ã€‚\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=15;
 	}
 	if(memcmp(Path_Flag_03,"-h",2)==0 && Tmp_Flag_05!=2)
 	{
-		printf("[\033[32m+\033[0m] ÓÃ·¨£ºmkdir [ÃüÁî²ÎÊı]... Ä¿Â¼Ãû...\n");
-		printf("±¾ÃüÁîÓÃÓÚÔÚÄ¿±êÎÄ¼ş¼Ğ²»´æÔÚµÄÇé¿öÏÂ´´½¨ÎÄ¼ş¼Ğ¡£\n");
-		printf("  ²ÎÊı£º\n");
-		printf("\t-h\tÏÔÊ¾´Ë°ïÖú²¢ÍË³ö¡£\n");
-		printf("\t-v\tÏÔÊ¾°æ±¾ĞÅÏ¢²¢ÍË³ö¡£\n\n");
-		printf("ÓĞÈÎºÎÒâ¼û»ò½¨ÒéÇëÁªÏµ×÷Õß <\033[1;4mkjx52@outlook.com\033[0m>¡£\n");
+		printf("[\033[32m+\033[0m] ç”¨æ³•ï¼šmkdir [å‘½ä»¤å‚æ•°]... ç›®å½•å...\n");
+		printf("æœ¬å‘½ä»¤ç”¨äºåœ¨ç›®æ ‡æ–‡ä»¶å¤¹ä¸å­˜åœ¨çš„æƒ…å†µä¸‹åˆ›å»ºæ–‡ä»¶å¤¹ã€‚\n");
+		printf("  å‚æ•°ï¼š\n");
+		printf("\t-h\tæ˜¾ç¤ºæ­¤å¸®åŠ©å¹¶é€€å‡ºã€‚\n");
+		printf("\t-v\tæ˜¾ç¤ºç‰ˆæœ¬ä¿¡æ¯å¹¶é€€å‡ºã€‚\n\n");
+		printf("æœ‰ä»»ä½•æ„è§æˆ–å»ºè®®è¯·è”ç³»ä½œè€… <\033[1;4mkjx52@outlook.com\033[0m>ã€‚\n");
 		
 		Tmp_Flag_05=2;
 		Return_Code_02=0;
@@ -910,33 +910,33 @@ int Make_Directories(char *Ac_Command,char *Function_String,char *Home_Path,char
 	if(memcmp(Path_Flag_03,"-v",2)==0 && Tmp_Flag_05!=2)
 	{
 		printf("mkdir 1.04\n");
-		printf("°æÈ¨ËùÓĞ (C) 2023 Indie developers, Inc.\n\n");
+		printf("ç‰ˆæƒæ‰€æœ‰ (C) 2023 Indie developers, Inc.\n\n");
 		printf("Written by Jessarin\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=0;
 	}
 	if(Target(Path_Flag_03,Error_C) && Tmp_Flag_05!=2)
 	{
-		printf("[\033[31m-\033[0m] mkdir £º ÎŞĞ§²ÎÊı¡£\n");
-		printf("[?] ÇëÊ¹ÓÃ mkdir -h ÏÔÊ¾°ïÖú¡£\n");
+		printf("[\033[31m-\033[0m] mkdir ï¼š æ— æ•ˆå‚æ•°ã€‚\n");
+		printf("[?] è¯·ä½¿ç”¨ mkdir -h æ˜¾ç¤ºå¸®åŠ©ã€‚\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=15;
 	}
 	if(strlen(Path_Flag_03)==1 && Path_Flag_03[0]=='/' && Tmp_Flag_05!=2)
 	{
-		printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+		printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=4;
 	}
 	if(Tmp_Flag_06==2 && Tmp_Flag_05!=2)
 	{
-		printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+		printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=3;
 	}
 	if(Path_Flag_03[0]==':' && Tmp_Flag_05!=2)
 	{
-		printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+		printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=3;
 	}
@@ -950,7 +950,7 @@ int Make_Directories(char *Ac_Command,char *Function_String,char *Home_Path,char
 		{
 			if(Tmp_Flag_11[Tmp_Flag_12]==':' || Tmp_Flag_11[Tmp_Flag_12]=='/')
 			{
-				printf("[\033[31m-\033[0m]\033[31m mkdir : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎªÄ¿Â¼ÃûÖĞ²»ÄÜ°üº¬ÒÔÏÂÈÎÒ»×Ö·û£º\n\t  ¡°/¡± ¡°\\¡± ¡°:¡± ¡°*¡± ¡°\?¡± ¡°\"¡± ¡°<¡± ¡°>¡± ¡°|¡±\n\033[0m");
+				printf("[\033[31m-\033[0m]\033[31m mkdir : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºç›®å½•åä¸­ä¸èƒ½åŒ…å«ä»¥ä¸‹ä»»ä¸€å­—ç¬¦ï¼š\n\t  â€œ/â€ â€œ\\â€ â€œ:â€ â€œ*â€ â€œ\?â€ â€œ\"â€ â€œ<â€ â€œ>â€ â€œ|â€\n\033[0m");
 				Tmp_Flag_05=2;
 				Return_Code_02=11;
 			}
@@ -963,21 +963,21 @@ int Make_Directories(char *Ac_Command,char *Function_String,char *Home_Path,char
 		{
 			if(Path_Flag_03[1]!=':')
 			{
-				printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+				printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 				Return_Code_02=5;
 			}
 			else
 			{
 				if(Path_Flag_03[0]!='c' && Path_Flag_03[0]!='C')
 				{
-					printf("[\033[31m-\033[0m]\033[31m ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n\033[0m");
+					printf("[\033[31m-\033[0m]\033[31m ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n\033[0m");
 					Return_Code_02=6;
 				}
 				else
 				{
 					if(strlen(Path_Flag_03)==2)
 					{
-						printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+						printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 						Return_Code_02=7;
 					}
 					else
@@ -1009,24 +1009,24 @@ int Make_Directories(char *Ac_Command,char *Function_String,char *Home_Path,char
 									}
 									
 									memset(Env_Path_06,0,sizeof(Env_Path_06));
-									printf("[\033[32m+\033[0m] Ä¿Â¼´´½¨³É¹¦£º%s ¡£\n",Tmp_Flag_11);
+									printf("[\033[32m+\033[0m] ç›®å½•åˆ›å»ºæˆåŠŸï¼š%s ã€‚\n",Tmp_Flag_11);
 									Return_Code_02=0;
 								}
 								else
 								{
-									printf("[\033[31m-\033[0m] mkdir : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎªÎÄ¼ş¼Ğ¡°%s¡±ÒÑ´æÔÚ¡£\n",Tmp_Flag_11);
+									printf("[\033[31m-\033[0m] mkdir : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºæ–‡ä»¶å¤¹â€œ%sâ€å·²å­˜åœ¨ã€‚\n",Tmp_Flag_11);
 									Return_Code_02=14;
 								}
 							}
 							else
 							{
-								printf("[\033[31m-\033[0m] ¾Ü¾ø·ÃÎÊ¡£\n");
+								printf("[\033[31m-\033[0m] æ‹’ç»è®¿é—®ã€‚\n");
 								Return_Code_02=7;
 							}
 						}
 						else
 						{
-							printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+							printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 							Return_Code_02=8;
 						}
 					}
@@ -1064,24 +1064,24 @@ int Make_Directories(char *Ac_Command,char *Function_String,char *Home_Path,char
 							}
 							
 							memset(Env_Path_06,0,sizeof(Env_Path_06));
-							printf("[\033[32m+\033[0m] Ä¿Â¼´´½¨³É¹¦£º%s ¡£\n",Tmp_Flag_11);
+							printf("[\033[32m+\033[0m] ç›®å½•åˆ›å»ºæˆåŠŸï¼š%s ã€‚\n",Tmp_Flag_11);
 							Return_Code_02=0;
 						}
 						else
 						{
-							printf("[\033[31m-\033[0m] mkdir : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎªÎÄ¼ş¼Ğ¡°%s¡±ÒÑ´æÔÚ¡£\n",Tmp_Flag_11);
+							printf("[\033[31m-\033[0m] mkdir : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºæ–‡ä»¶å¤¹â€œ%sâ€å·²å­˜åœ¨ã€‚\n",Tmp_Flag_11);
 							Return_Code_02=14;
 						}
 					}
 					else
 					{
-						printf("[\033[31m-\033[0m] ¾Ü¾ø·ÃÎÊ¡£\n");
+						printf("[\033[31m-\033[0m] æ‹’ç»è®¿é—®ã€‚\n");
 						Return_Code_02=7;
 					}
 				}
 				else
 				{
-					printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+					printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 					Return_Code_02=8;
 				}
 			}
@@ -1119,24 +1119,24 @@ int Make_Directories(char *Ac_Command,char *Function_String,char *Home_Path,char
 							}
 							
 							memset(Env_Path_06,0,sizeof(Env_Path_06));
-							printf("[\033[32m+\033[0m] Ä¿Â¼´´½¨³É¹¦£º%s ¡£\n",Tmp_Flag_11);
+							printf("[\033[32m+\033[0m] ç›®å½•åˆ›å»ºæˆåŠŸï¼š%s ã€‚\n",Tmp_Flag_11);
 							Return_Code_02=0;
 						}
 						else
 						{
-							printf("[\033[31m-\033[0m] mkdir : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎªÎÄ¼ş¼Ğ¡°%s¡±ÒÑ´æÔÚ¡£\n",Tmp_Flag_11);
+							printf("[\033[31m-\033[0m] mkdir : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºæ–‡ä»¶å¤¹â€œ%sâ€å·²å­˜åœ¨ã€‚\n",Tmp_Flag_11);
 							Return_Code_02=14;
 						}
 					}
 					else
 					{
-						printf("[\033[31m-\033[0m] ¾Ü¾ø·ÃÎÊ¡£\n");
+						printf("[\033[31m-\033[0m] æ‹’ç»è®¿é—®ã€‚\n");
 						Return_Code_02=9;
 					}
 				}
 				else
 				{
-					printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+					printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 					Return_Code_02=10;
 				}
 			}
@@ -1167,14 +1167,14 @@ int Make_Directories(char *Ac_Command,char *Function_String,char *Home_Path,char
 		{
 			FILE*Touch_Result2;
 			Touch_Result2=fopen(Res_Log_Path,"a");
-			fprintf(Touch_Result2,"[%s]\t# %s :(mkdir) Ä¿Â¼ÒÑ´æÔÚ¡£·µ»ØÖµ£º14\n",Time_Handel,getcwd(NULL,NULL));
+			fprintf(Touch_Result2,"[%s]\t# %s :(mkdir) ç›®å½•å·²å­˜åœ¨ã€‚è¿”å›å€¼ï¼š14\n",Time_Handel,getcwd(NULL,NULL));
 			fclose(Touch_Result2);
 		}
 		else
 		{
 			FILE*Touch_Result2;
 			Touch_Result2=fopen(Res_Log_Path,"a");
-			fprintf(Touch_Result2,"[%s]\t# %s :(mkdir) Ä¿Â¼´´½¨Ê§°Ü¡£·µ»ØÖµ£º%d\n",Time_Handel,getcwd(NULL,NULL),Return_Code_02);
+			fprintf(Touch_Result2,"[%s]\t# %s :(mkdir) ç›®å½•åˆ›å»ºå¤±è´¥ã€‚è¿”å›å€¼ï¼š%d\n",Time_Handel,getcwd(NULL,NULL),Return_Code_02);
 			fclose(Touch_Result2);
 		}
 	}
@@ -1382,24 +1382,24 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 	Tmp_Flag_05=0;
 	if(Path_Flag_04[0]==0 || sizeof(Path_Flag_04)==0)
 	{
-		printf("[\033[31m-\033[0m] rm £º ÎŞĞ§²ÎÊı¡£\n");
-		printf("[?] ÇëÊ¹ÓÃ rm -h ÏÔÊ¾°ïÖú¡£\n");
+		printf("[\033[31m-\033[0m] rm ï¼š æ— æ•ˆå‚æ•°ã€‚\n");
+		printf("[?] è¯·ä½¿ç”¨ rm -h æ˜¾ç¤ºå¸®åŠ©ã€‚\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=18;
 	}
 	if(memcmp(Path_Flag_04,"-h",2)==0 && Tmp_Flag_05!=2)
 	{
-		printf("[\033[32m+\033[0m] ÓÃ·¨£ºrm [ÃüÁî²ÎÊı]... [ÎÄ¼şÃû]...\n");
-		printf("±¾ÃüÁîÓÃÓÚÉ¾³ı£¨½â°ó£©ÎÄ¼ş»òÎÄ¼şÁ´½Ó¡£\n");
-		printf("  ²ÎÊı£º\n");
-		printf("\t-h\tÏÔÊ¾´Ë°ïÖú²¢ÍË³ö¡£\n");
-		printf("\t-v\tÏÔÊ¾°æ±¾ĞÅÏ¢²¢ÍË³ö¡£\n\n");
-		printf("  Ä¬ÈÏÇé¿öÏÂ£¬±¾ÃüÁî¿É×Ô¶¯Ê¶±ğÊı¾İÀàĞÍ£¨ÎÄ¼ş/ÎÄ¼ş¼Ğ£©£¬²»ĞèÒª¶îÍâ²ÎÊı»ò±ê¼Ç¡£\n\n"); 
-		printf("  ×¢Òâ:\n");
-		printf("  1.´ËÃüÁî²»Ö§³ÖÉ¾³ı»·¾³ÎÄ¼ş¡£ÈôµÄÈ·ĞèÒª¸ü¸Ä»·¾³ÎÄ¼ş£¬Çë¿¼ÂÇÊ¹ÓÃ \033[1;4mwipe\033[0m ÃüÁî¡£\n");
-		printf("  2.Çë×¢Òâ£¬Èç¹ûÊ¹ÓÃ rm É¾³ıÎÄ¼ş£¬ÔòÔÚÓĞ×ã¹»µÄ×¨ÒµÖªÊ¶ºÍ/»òÊ±¼äµÄÇé¿öÏÂ£¬¿ÉÄÜ»á»Ö¸´ÆäÖĞµÄÄ³Ğ©ÄÚÈİ¡£\n");
-		printf("    ÎªÁË¸üºÃµØÈ·±£ÄÚÈİÈ·Êµ²»¿É»Ö¸´£¬Çë¿¼ÂÇÊ¹ÓÃ \033[1;4mshred\033[0m ÃüÁî¡£\n\n");
-		printf("ÓĞÈÎºÎÒâ¼û»ò½¨ÒéÇëÁªÏµ×÷Õß <\033[1;4mkjx52@outlook.com\033[0m>¡£\n");
+		printf("[\033[32m+\033[0m] ç”¨æ³•ï¼šrm [å‘½ä»¤å‚æ•°]... [æ–‡ä»¶å]...\n");
+		printf("æœ¬å‘½ä»¤ç”¨äºåˆ é™¤ï¼ˆè§£ç»‘ï¼‰æ–‡ä»¶æˆ–æ–‡ä»¶é“¾æ¥ã€‚\n");
+		printf("  å‚æ•°ï¼š\n");
+		printf("\t-h\tæ˜¾ç¤ºæ­¤å¸®åŠ©å¹¶é€€å‡ºã€‚\n");
+		printf("\t-v\tæ˜¾ç¤ºç‰ˆæœ¬ä¿¡æ¯å¹¶é€€å‡ºã€‚\n\n");
+		printf("  é»˜è®¤æƒ…å†µä¸‹ï¼Œæœ¬å‘½ä»¤å¯è‡ªåŠ¨è¯†åˆ«æ•°æ®ç±»å‹ï¼ˆæ–‡ä»¶/æ–‡ä»¶å¤¹ï¼‰ï¼Œä¸éœ€è¦é¢å¤–å‚æ•°æˆ–æ ‡è®°ã€‚\n\n"); 
+		printf("  æ³¨æ„:\n");
+		printf("  1.æ­¤å‘½ä»¤ä¸æ”¯æŒåˆ é™¤ç¯å¢ƒæ–‡ä»¶ã€‚è‹¥çš„ç¡®éœ€è¦æ›´æ”¹ç¯å¢ƒæ–‡ä»¶ï¼Œè¯·è€ƒè™‘ä½¿ç”¨ \033[1;4mwipe\033[0m å‘½ä»¤ã€‚\n");
+		printf("  2.è¯·æ³¨æ„ï¼Œå¦‚æœä½¿ç”¨ rm åˆ é™¤æ–‡ä»¶ï¼Œåˆ™åœ¨æœ‰è¶³å¤Ÿçš„ä¸“ä¸šçŸ¥è¯†å’Œ/æˆ–æ—¶é—´çš„æƒ…å†µä¸‹ï¼Œå¯èƒ½ä¼šæ¢å¤å…¶ä¸­çš„æŸäº›å†…å®¹ã€‚\n");
+		printf("    ä¸ºäº†æ›´å¥½åœ°ç¡®ä¿å†…å®¹ç¡®å®ä¸å¯æ¢å¤ï¼Œè¯·è€ƒè™‘ä½¿ç”¨ \033[1;4mshred\033[0m å‘½ä»¤ã€‚\n\n");
+		printf("æœ‰ä»»ä½•æ„è§æˆ–å»ºè®®è¯·è”ç³»ä½œè€… <\033[1;4mkjx52@outlook.com\033[0m>ã€‚\n");
 		
 		Tmp_Flag_05=2;
 		Return_Code_02=0;
@@ -1407,33 +1407,33 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 	if(memcmp(Path_Flag_04,"-v",2)==0 && Tmp_Flag_05!=2)
 	{
 		printf("rm 1.12\n");
-		printf("°æÈ¨ËùÓĞ (C) 2023 Indie developers, Inc.\n\n");
+		printf("ç‰ˆæƒæ‰€æœ‰ (C) 2023 Indie developers, Inc.\n\n");
 		printf("Written by Jessarin\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=0;
 	}
 	if(Target(Path_Flag_04,Error_C) && Tmp_Flag_05!=2)
 	{
-		printf("[\033[31m-\033[0m] rm £º ÎŞĞ§²ÎÊı¡£\n");
-		printf("[?] ÇëÊ¹ÓÃ rm -h ÏÔÊ¾°ïÖú¡£\n");
+		printf("[\033[31m-\033[0m] rm ï¼š æ— æ•ˆå‚æ•°ã€‚\n");
+		printf("[?] è¯·ä½¿ç”¨ rm -h æ˜¾ç¤ºå¸®åŠ©ã€‚\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=18;
 	}
 	if(strlen(Path_Flag_04)==1 && Path_Flag_04[0]=='/' && Tmp_Flag_05!=2)
 	{
-		printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+		printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=4;
 	}
 	if(Tmp_Flag_06==2 && Tmp_Flag_05!=2)
 	{
-		printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+		printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=3;
 	}
 	if(Path_Flag_04[0]==':' && Tmp_Flag_05!=2)
 	{
-		printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+		printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 		Tmp_Flag_05=2;
 		Return_Code_02=3;
 	}
@@ -1447,7 +1447,7 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 		{
 			if(Tmp_Flag_11[Tmp_Flag_12]==':' || Tmp_Flag_11[Tmp_Flag_12]=='/')
 			{
-				printf("[\033[31m-\033[0m]\033[31m rm : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎªÄ¿Â¼ÃûÖĞ²»ÄÜ°üº¬ÒÔÏÂÈÎÒ»×Ö·û£º\n\t  ¡°/¡± ¡°\\¡± ¡°:¡± ¡°*¡± ¡°\?¡± ¡°\"¡± ¡°<¡± ¡°>¡± ¡°|¡±\n\033[0m");
+				printf("[\033[31m-\033[0m]\033[31m rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºç›®å½•åä¸­ä¸èƒ½åŒ…å«ä»¥ä¸‹ä»»ä¸€å­—ç¬¦ï¼š\n\t  â€œ/â€ â€œ\\â€ â€œ:â€ â€œ*â€ â€œ\?â€ â€œ\"â€ â€œ<â€ â€œ>â€ â€œ|â€\n\033[0m");
 				Tmp_Flag_05=2;
 				Return_Code_02=11;
 			}
@@ -1460,21 +1460,21 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 		{
 			if(Path_Flag_04[1]!=':')
 			{
-				printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+				printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 				Return_Code_02=5;
 			}
 			else
 			{
 				if(Path_Flag_04[0]!='c' && Path_Flag_04[0]!='C')
 				{
-					printf("[\033[31m-\033[0m]\033[31m ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n\033[0m");
+					printf("[\033[31m-\033[0m]\033[31m ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n\033[0m");
 					Return_Code_02=6;
 				}
 				else
 				{
 					if(strlen(Path_Flag_04)==2)
 					{
-						printf("[\033[31m-\033[0m] ÎŞĞ§ÊäÈë¡£\n");
+						printf("[\033[31m-\033[0m] æ— æ•ˆè¾“å…¥ã€‚\n");
 						Return_Code_02=7;
 					}
 					else
@@ -1540,7 +1540,7 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 													switch(Tmp_Flag_12)
 													{
 														case 0 :
-															printf("[\033[32m+\033[0m] ÎÄ¼şÉ¾³ı³É¹¦¡£\n");
+															printf("[\033[32m+\033[0m] æ–‡ä»¶åˆ é™¤æˆåŠŸã€‚\n");
 															
 															Node_07:
 															for(Counter_15=0;Counter_15<Counter_14;Counter_15++)
@@ -1592,17 +1592,17 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 															break;
 														
 														case 1 || -1 :
-															printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+															printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 															Return_Code_02=14;
 															break;
 														
 														case 2 :
-															printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬Êı¾İ½á¹¹ÀàĞÍÎ´Öª¡£´ËÊÂ¼ş½«±»±¨¸æ¡£\n");
+															printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œæ•°æ®ç»“æ„ç±»å‹æœªçŸ¥ã€‚æ­¤äº‹ä»¶å°†è¢«æŠ¥å‘Šã€‚\n");
 															Return_Code_02=16;
 															break;
 														
 														default:
-															printf("[\033[31m?\033[0m] rm : Î´Öª´íÎó£¬´ËÊÂ¼ş½«±»±¨¸æ¡£\n");
+															printf("[\033[31m?\033[0m] rm : æœªçŸ¥é”™è¯¯ï¼Œæ­¤äº‹ä»¶å°†è¢«æŠ¥å‘Šã€‚\n");
 															Return_Code_02=17;
 															break;
 													}
@@ -1613,7 +1613,7 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 													
 													if(Tmp_Flag_12==0)
 													{
-														printf("[\033[32m+\033[0m] ÎÄ¼şÉ¾³ı³É¹¦¡£\n");
+														printf("[\033[32m+\033[0m] æ–‡ä»¶åˆ é™¤æˆåŠŸã€‚\n");
 														
 														Node_08:
 														for(Counter_15=0;Counter_15<Counter_14;Counter_15++)
@@ -1663,14 +1663,14 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 													}
 													else
 													{
-														printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+														printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 														Return_Code_02=14;
 													}
 													
 													break;
 												
 												default:
-													printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬Êı¾İ½á¹¹ÀàĞÍÎ´Öª¡£´ËÊÂ¼ş½«±»±¨¸æ¡£\n");
+													printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œæ•°æ®ç»“æ„ç±»å‹æœªçŸ¥ã€‚æ­¤äº‹ä»¶å°†è¢«æŠ¥å‘Šã€‚\n");
 													Return_Code_02=16;
 													
 													break;
@@ -1679,32 +1679,32 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 										}
 										else
 										{
-											printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+											printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 											Return_Code_02=14;
 										}
 									}
 									else
 									{
-										printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎª´ËÃüÁî²»Ö§³ÖÉ¾³ı»·¾³ÎÄ¼ş¡£\n");
-										printf("    ÈôµÄÈ·ĞèÒª¸ü¸Ä»·¾³ÎÄ¼ş£¬ÇëÊ¹ÓÃ \033[1;4mwipe\033[0m ÃüÁî¡£\n");
+										printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºæ­¤å‘½ä»¤ä¸æ”¯æŒåˆ é™¤ç¯å¢ƒæ–‡ä»¶ã€‚\n");
+										printf("    è‹¥çš„ç¡®éœ€è¦æ›´æ”¹ç¯å¢ƒæ–‡ä»¶ï¼Œè¯·ä½¿ç”¨ \033[1;4mwipe\033[0m å‘½ä»¤ã€‚\n");
 										Return_Code_02=15;
 									}
 								}
 								else
 								{
-									printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+									printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 									Return_Code_02=12;
 								}
 							}
 							else
 							{
-								printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+								printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 								Return_Code_02=7;
 							}
 						}
 						else
 						{
-							printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+							printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 							Return_Code_02=8;
 						}
 					}
@@ -1773,7 +1773,7 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 											switch(Tmp_Flag_12)
 											{
 												case 0 :
-													printf("[\033[32m+\033[0m] ÎÄ¼şÉ¾³ı³É¹¦¡£\n");
+													printf("[\033[32m+\033[0m] æ–‡ä»¶åˆ é™¤æˆåŠŸã€‚\n");
 													
 													Node_09:
 													for(Counter_15=0;Counter_15<Counter_14;Counter_15++)
@@ -1823,17 +1823,17 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 													break;
 												
 												case 1 || -1 :
-													printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+													printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 													Return_Code_02=14;
 													break;
 												
 												case 2 :
-													printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬Êı¾İ½á¹¹ÀàĞÍÎ´Öª¡£´ËÊÂ¼ş½«±»±¨¸æ¡£\n");
+													printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œæ•°æ®ç»“æ„ç±»å‹æœªçŸ¥ã€‚æ­¤äº‹ä»¶å°†è¢«æŠ¥å‘Šã€‚\n");
 													Return_Code_02=16;
 													break;
 												
 												default:
-													printf("[\033[31m?\033[0m] rm : Î´Öª´íÎó£¬´ËÊÂ¼ş½«±»±¨¸æ¡£\n");
+													printf("[\033[31m?\033[0m] rm : æœªçŸ¥é”™è¯¯ï¼Œæ­¤äº‹ä»¶å°†è¢«æŠ¥å‘Šã€‚\n");
 													Return_Code_02=17;
 													break;
 											}
@@ -1844,7 +1844,7 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 											
 											if(Tmp_Flag_12==0)
 											{
-												printf("[\033[32m+\033[0m] ÎÄ¼şÉ¾³ı³É¹¦¡£\n");
+												printf("[\033[32m+\033[0m] æ–‡ä»¶åˆ é™¤æˆåŠŸã€‚\n");
 												
 												Node_10:
 												for(Counter_15=0;Counter_15<Counter_14;Counter_15++)
@@ -1894,14 +1894,14 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 											}
 											else
 											{
-												printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+												printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 												Return_Code_02=14;
 											}
 											
 											break;
 										
 										default:
-											printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬Êı¾İ½á¹¹ÀàĞÍÎ´Öª¡£´ËÊÂ¼ş½«±»±¨¸æ¡£\n");
+											printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œæ•°æ®ç»“æ„ç±»å‹æœªçŸ¥ã€‚æ­¤äº‹ä»¶å°†è¢«æŠ¥å‘Šã€‚\n");
 											Return_Code_02=16;
 											
 											break;
@@ -1910,32 +1910,32 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 								}
 								else
 								{
-									printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+									printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 									Return_Code_02=14;
 								}
 							}
 							else
 							{
-								printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎª´ËÃüÁî²»Ö§³ÖÉ¾³ı»·¾³ÎÄ¼ş¡£\n");
-								printf("    ÈôµÄÈ·ĞèÒª¸ü¸Ä»·¾³ÎÄ¼ş£¬ÇëÊ¹ÓÃ \033[1;4mwipe\033[0m ÃüÁî¡£\n");
+								printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºæ­¤å‘½ä»¤ä¸æ”¯æŒåˆ é™¤ç¯å¢ƒæ–‡ä»¶ã€‚\n");
+								printf("    è‹¥çš„ç¡®éœ€è¦æ›´æ”¹ç¯å¢ƒæ–‡ä»¶ï¼Œè¯·ä½¿ç”¨ \033[1;4mwipe\033[0m å‘½ä»¤ã€‚\n");
 								Return_Code_02=15;
 							}
 						}
 						else
 						{
-							printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+							printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 							Return_Code_02=12;
 						}
 					}
 					else
 					{
-						printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+						printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 						Return_Code_02=7;
 					}
 				}
 				else
 				{
-					printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+					printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 					Return_Code_02=8;
 				}
 			}
@@ -2005,7 +2005,7 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 											switch(Tmp_Flag_12)
 											{
 												case 0 :
-													printf("[\033[32m+\033[0m] ÎÄ¼şÉ¾³ı³É¹¦¡£\n");
+													printf("[\033[32m+\033[0m] æ–‡ä»¶åˆ é™¤æˆåŠŸã€‚\n");
 													
 													Node_11:
 													for(Counter_15=0;Counter_15<Counter_14;Counter_15++)
@@ -2055,17 +2055,17 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 													break;
 												
 												case 1 || -1 :
-													printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+													printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 													Return_Code_02=14;
 													break;
 												
 												case 2 :
-													printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬Êı¾İ½á¹¹ÀàĞÍÎ´Öª¡£´ËÊÂ¼ş½«±»±¨¸æ¡£\n");
+													printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œæ•°æ®ç»“æ„ç±»å‹æœªçŸ¥ã€‚æ­¤äº‹ä»¶å°†è¢«æŠ¥å‘Šã€‚\n");
 													Return_Code_02=16;
 													break;
 												
 												default:
-													printf("[\033[31m?\033[0m] rm : Î´Öª´íÎó£¬´ËÊÂ¼ş½«±»±¨¸æ¡£\n");
+													printf("[\033[31m?\033[0m] rm : æœªçŸ¥é”™è¯¯ï¼Œæ­¤äº‹ä»¶å°†è¢«æŠ¥å‘Šã€‚\n");
 													Return_Code_02=17;
 													break;
 											}
@@ -2076,7 +2076,7 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 											
 											if(Tmp_Flag_12==0)
 											{
-												printf("[\033[32m+\033[0m] ÎÄ¼şÉ¾³ı³É¹¦¡£\n");
+												printf("[\033[32m+\033[0m] æ–‡ä»¶åˆ é™¤æˆåŠŸã€‚\n");
 												
 												Node_12:
 												for(Counter_15=0;Counter_15<Counter_14;Counter_15++)
@@ -2126,14 +2126,14 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 											}
 											else
 											{
-												printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+												printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 												Return_Code_02=14;
 											}
 											
 											break;
 										
 										default:
-											printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬Êı¾İ½á¹¹ÀàĞÍÎ´Öª¡£´ËÊÂ¼ş½«±»±¨¸æ¡£\n");
+											printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œæ•°æ®ç»“æ„ç±»å‹æœªçŸ¥ã€‚æ­¤äº‹ä»¶å°†è¢«æŠ¥å‘Šã€‚\n");
 											Return_Code_02=16;
 											
 											break;
@@ -2142,32 +2142,32 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 								}
 								else
 								{
-									printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+									printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 									Return_Code_02=14;
 								}
 							}
 							else
 							{
-								printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎª´ËÃüÁî²»Ö§³ÖÉ¾³ı»·¾³ÎÄ¼ş¡£\n");
-								printf("    ÈôµÄÈ·ĞèÒª¸ü¸Ä»·¾³ÎÄ¼ş£¬ÇëÊ¹ÓÃ \033[1;4mwipe\033[0m ÃüÁî¡£\n");
+								printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºæ­¤å‘½ä»¤ä¸æ”¯æŒåˆ é™¤ç¯å¢ƒæ–‡ä»¶ã€‚\n");
+								printf("    è‹¥çš„ç¡®éœ€è¦æ›´æ”¹ç¯å¢ƒæ–‡ä»¶ï¼Œè¯·ä½¿ç”¨ \033[1;4mwipe\033[0m å‘½ä»¤ã€‚\n");
 								Return_Code_02=15;
 							}
 						}
 						else
 						{
-							printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+							printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 							Return_Code_02=12;
 						}
 					}
 					else
 					{
-						printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬·ÃÎÊ±»¾Ü¾ø¡£\n");
+						printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œè®¿é—®è¢«æ‹’ç»ã€‚\n");
 						Return_Code_02=9;
 					}
 				}
 				else
 				{
-					printf("[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+					printf("[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 					Return_Code_02=10;
 				}
 			}
@@ -2197,28 +2197,28 @@ int Remove(char *Ac_Command,char *Function_String,char *Home_Path,char (*Creat_F
 		case 15 :
 			FILE*Touch_Result2;
 			Touch_Result2=fopen(Res_Log_Path,"a");
-			fprintf(Touch_Result2,"[%s]\t# %s :(rm) ¾¯¸æ£º³¢ÊÔÉ¾³ı»·¾³ÎÄ¼ş¡£·µ»ØÖµ£º15¡£\n",Time_Handel,getcwd(NULL,NULL));
+			fprintf(Touch_Result2,"[%s]\t# %s :(rm) è­¦å‘Šï¼šå°è¯•åˆ é™¤ç¯å¢ƒæ–‡ä»¶ã€‚è¿”å›å€¼ï¼š15ã€‚\n",Time_Handel,getcwd(NULL,NULL));
 			fclose(Touch_Result2);
 			break;
 		
 		case 16 :
 			FILE*Touch_Result3;
 			Touch_Result3=fopen(Res_Log_Path,"a");
-			fprintf(Touch_Result3,"[%s]\t# %s :(rm) ¾¯¸æ£º³¢ÊÔÉ¾³ıÎ´ÖªÀàĞÍµÄÊı¾İ½á¹¹¡£·µ»ØÖµ£º16¡£\n",Time_Handel,getcwd(NULL,NULL));
+			fprintf(Touch_Result3,"[%s]\t# %s :(rm) è­¦å‘Šï¼šå°è¯•åˆ é™¤æœªçŸ¥ç±»å‹çš„æ•°æ®ç»“æ„ã€‚è¿”å›å€¼ï¼š16ã€‚\n",Time_Handel,getcwd(NULL,NULL));
 			fclose(Touch_Result3);
 			break;
 		
 		case 17 :
 			FILE*Touch_Result4;
 			Touch_Result4=fopen(Res_Log_Path,"a");
-			fprintf(Touch_Result4,"[%s]\t# %s :(rm) ¾¯¸æ£º³öÏÖÎ´Öª´íÎó¡£·µ»ØÖµ£º17¡£\n",Time_Handel,getcwd(NULL,NULL));
+			fprintf(Touch_Result4,"[%s]\t# %s :(rm) è­¦å‘Šï¼šå‡ºç°æœªçŸ¥é”™è¯¯ã€‚è¿”å›å€¼ï¼š17ã€‚\n",Time_Handel,getcwd(NULL,NULL));
 			fclose(Touch_Result4);
 			break;
 		
 		default:
 			FILE*Touch_Result5;
 			Touch_Result5=fopen(Res_Log_Path,"a");
-			fprintf(Touch_Result5,"[%s]\t# %s :(rm) ÎÄ¼şÉ¾³ıÊ§°Ü¡£·µ»ØÖµ£º%d¡£\n",Time_Handel,getcwd(NULL,NULL),Return_Code_02);
+			fprintf(Touch_Result5,"[%s]\t# %s :(rm) æ–‡ä»¶åˆ é™¤å¤±è´¥ã€‚è¿”å›å€¼ï¼š%dã€‚\n",Time_Handel,getcwd(NULL,NULL),Return_Code_02);
 			fclose(Touch_Result5);
 			break;
 	}
@@ -2296,9 +2296,9 @@ int main(int argc, char *argv[])
 	Sleep(100);
 	chdir("C:\\Users\\kali\\Shell\\home\\kali");
 	system("cls");
-	printf("Windows Bacsh\n°æÈ¨ËùÓĞ (C) GNU/Linux Bourne Again Compile Shell¡£±£ÁôËùÓĞÈ¨Àû¡£\n\n³¢ÊÔĞÂµÄ¿çÆ½Ì¨ Bacsh https://www.gnu.org/\n\n");
+	printf("Windows Bacsh\nç‰ˆæƒæ‰€æœ‰ (C) GNU/Linux Bourne Again Compile Shellã€‚ä¿ç•™æ‰€æœ‰æƒåˆ©ã€‚\n\nå°è¯•æ–°çš„è·¨å¹³å° Bacsh https://www.gnu.org/\n\n");
 	
-//=========================================== ½»»¥¼°¶¯Ì¬×Ö·û¹ıÂËÄ£¿é
+//=========================================== äº¤äº’åŠåŠ¨æ€å­—ç¬¦è¿‡æ»¤æ¨¡å—
 	Node_01:
 	memset(Path_Flag_02,0,sizeof(Path_Flag_02));
 	memset(Ac_Command,0,sizeof(Ac_Command));
@@ -2318,8 +2318,8 @@ int main(int argc, char *argv[])
 	{
 		if(Path_Flag_01==1)
 		{
-			printf("\n\033[32m©°©¤©¤(\033[0m\033[34m %s@%s \033[0m\033[32m)-[\033[0m C:\\ \033[32m]\033[0m\n",Env_User,Computer_Name);
-			printf("\033[32m©¸©¤\033[0m\033[34m$\033[0m ") ;
+			printf("\n\033[32mâ”Œâ”€â”€(\033[0m\033[34m %s@%s \033[0m\033[32m)-[\033[0m C:\\ \033[32m]\033[0m\n",Env_User,Computer_Name);
+			printf("\033[32mâ””â”€\033[0m\033[34m$\033[0m ") ;
 		}
 		else
 		{
@@ -2327,19 +2327,19 @@ int main(int argc, char *argv[])
 			{
 				if(memcmp(Path_Flag_03,Home_Path_02,sizeof(Home_Path_02))==0 || memcmp(Path_Flag_03,Home_Path_03,sizeof(Home_Path_03))==0)
 				{
-					printf("\n\033[32m©°©¤©¤(\033[0m\033[34m %s@%s \033[0m\033[32m)-[\033[0m ~ \033[32m]\033[0m\n",Env_User,Computer_Name);
-					printf("\033[32m©¸©¤\033[0m\033[34m$\033[0m ");
+					printf("\n\033[32mâ”Œâ”€â”€(\033[0m\033[34m %s@%s \033[0m\033[32m)-[\033[0m ~ \033[32m]\033[0m\n",Env_User,Computer_Name);
+					printf("\033[32mâ””â”€\033[0m\033[34m$\033[0m ");
 				}
 				else
 				{
-					printf("\n\033[32m©°©¤©¤(\033[0m\033[34m %s@%s \033[0m\033[32m)-[\033[0m %s \033[32m]\033[0m\n",Env_User,Computer_Name,Path_Flag_03);
-					printf("\033[32m©¸©¤\033[0m\033[34m$\033[0m ");
+					printf("\n\033[32mâ”Œâ”€â”€(\033[0m\033[34m %s@%s \033[0m\033[32m)-[\033[0m %s \033[32m]\033[0m\n",Env_User,Computer_Name,Path_Flag_03);
+					printf("\033[32mâ””â”€\033[0m\033[34m$\033[0m ");
 				}
 			}
 			else
 			{
-				printf("\n\033[32m©°©¤©¤(\033[0m\033[34m %s@%s \033[0m\033[32m)-[\033[0m ~ \033[32m]\033[0m\n",Env_User,Computer_Name);
-				printf("\033[32m©¸©¤\033[0m\033[34m$\033[0m ");
+				printf("\n\033[32mâ”Œâ”€â”€(\033[0m\033[34m %s@%s \033[0m\033[32m)-[\033[0m ~ \033[32m]\033[0m\n",Env_User,Computer_Name);
+				printf("\033[32mâ””â”€\033[0m\033[34m$\033[0m ");
 			}
 		}
 	}
@@ -2347,8 +2347,8 @@ int main(int argc, char *argv[])
 	{
 		if(Path_Flag_01==1)
 		{
-			printf("\n\033[34m©°©¤©¤(\033[0m\033[31m %s@%s \033[0m\033[34m)-[\033[0m C:\\ \033[34m]\033[0m\n",Env_User,Computer_Name);
-			printf("\033[34m©¸©¤\033[0m\033[31m#\033[0m ") ;
+			printf("\n\033[34mâ”Œâ”€â”€(\033[0m\033[31m %s@%s \033[0m\033[34m)-[\033[0m C:\\ \033[34m]\033[0m\n",Env_User,Computer_Name);
+			printf("\033[34mâ””â”€\033[0m\033[31m#\033[0m ") ;
 		}
 		else
 		{
@@ -2356,19 +2356,19 @@ int main(int argc, char *argv[])
 			{
 				if(memcmp(Path_Flag_03,Home_Path_02,sizeof(Home_Path_02))==0 || memcmp(Path_Flag_03,Home_Path_03,sizeof(Home_Path_03))==0)
 				{
-					printf("\n\033[34m©°©¤©¤(\033[0m\033[31m %s@%s \033[0m\033[34m)-[\033[0m ~ \033[34m]\033[0m\n",Env_User,Computer_Name);
-					printf("\033[34m©¸©¤\033[0m\033[31m#\033[0m ");
+					printf("\n\033[34mâ”Œâ”€â”€(\033[0m\033[31m %s@%s \033[0m\033[34m)-[\033[0m ~ \033[34m]\033[0m\n",Env_User,Computer_Name);
+					printf("\033[34mâ””â”€\033[0m\033[31m#\033[0m ");
 				}
 				else
 				{
-					printf("\n\033[34m©°©¤©¤(\033[0m\033[31m %s@%s \033[0m\033[34m)-[\033[0m %s \033[34m]\033[0m\n",Env_User,Computer_Name,Path_Flag_03);
-					printf("\033[34m©¸©¤\033[0m\033[31m#\033[0m ");
+					printf("\n\033[34mâ”Œâ”€â”€(\033[0m\033[31m %s@%s \033[0m\033[34m)-[\033[0m %s \033[34m]\033[0m\n",Env_User,Computer_Name,Path_Flag_03);
+					printf("\033[34mâ””â”€\033[0m\033[31m#\033[0m ");
 				}
 			}
 			else
 			{
-				printf("\n\033[34m©°©¤©¤(\033[0m\033[31m %s@%s \033[0m\033[34m)-[\033[0m ~ \033[34m]\033[0m\n",Env_User,Computer_Name);
-				printf("\033[34m©¸©¤\033[0m\033[31m#\033[0m ");
+				printf("\n\033[34mâ”Œâ”€â”€(\033[0m\033[31m %s@%s \033[0m\033[34m)-[\033[0m ~ \033[34m]\033[0m\n",Env_User,Computer_Name);
+				printf("\033[34mâ””â”€\033[0m\033[31m#\033[0m ");
 			}
 		}
 	}
@@ -2387,9 +2387,9 @@ int main(int argc, char *argv[])
 		{
 			printf("\n\n\n\033[;5;31m");
 			printf("######################################\n");
-			printf("#               %%¾¯¸æ%%               #\n");
-			printf("#        %%Bacsh ºËĞÄ½ø³ÌÊÜ×è%%        #\n");
-			printf("#           %%£¡½ô¼±ÖÕÖ¹£¡%%           #\n");
+			printf("#               %%è­¦å‘Š%%               #\n");
+			printf("#        %%Bacsh æ ¸å¿ƒè¿›ç¨‹å—é˜»%%        #\n");
+			printf("#           %%ï¼ç´§æ€¥ç»ˆæ­¢ï¼%%           #\n");
 			printf("#          Critical Code 03          #\n");
 			printf("######################################\n");
 			printf("\033[0m\n");
@@ -2850,7 +2850,7 @@ int main(int argc, char *argv[])
 			NeedNextKey=true;
 		}
 		 
-		//ÍË³öº¯Êı
+		//é€€å‡ºå‡½æ•°
 		if(Ac_Character=='Z')
 		{
 			printf("\033[0m");
@@ -2858,7 +2858,7 @@ int main(int argc, char *argv[])
 			Env_Tmp_Pipe_04=fopen(Env_Path,"w+");
 			fprintf(Env_Tmp_Pipe_04,"0");
 			fclose(Env_Tmp_Pipe_04);
-			printf("\nÍË³öµÇÂ¼¡£\n");
+			printf("\né€€å‡ºç™»å½•ã€‚\n");
 			chdir("C:\\Users\\kali\\Shell\\home\\kali");
 			for(Counter_01=0;Counter_01<15 && Creat_File_Path[Counter_01][0]!=0;Counter_01++);
 			for(;Counter_01>0;Counter_01--)
@@ -2882,21 +2882,21 @@ int main(int argc, char *argv[])
 		if(Counter_01>20)
 		{
 			printf("\033[0m\n");
-			printf("[\033[33m!\033[0m] \033[33mÃüÁî×î´ó³¤¶È£º20×Ö½Ú¡£ WarningCode:04\033[0m\n");
+			printf("[\033[33m!\033[0m] \033[33må‘½ä»¤æœ€å¤§é•¿åº¦ï¼š20å­—èŠ‚ã€‚ WarningCode:04\033[0m\n");
 			goto Node_01;
 		}
 	}
 	
 	memset(Path_Flag_02,0,sizeof(Path_Flag_02));
 	
-//=========================================== º¯Êı¹ıÂËÄ£¿é
-	// OS_Shell ¹ıÂË 
+//=========================================== å‡½æ•°è¿‡æ»¤æ¨¡å—
+	// OS_Shell è¿‡æ»¤ 
 	time(&Cur_Time);
 	Now=gmtime(&Cur_Time);
 	snprintf(Time_Handel,20,"%d-%d-%d %d:%d:%d",1900+Now->tm_year,1+Now->tm_mon,Now->tm_mday,8+Now->tm_hour,Now->tm_min,Now->tm_sec);
 	if(Target(Ac_Command,OS_Shell_Flag_01)==1)
 	{
-		printf("\033[1m[\033[1;31m-\033[0m\033[1m] \033[1;31m·ÃÎÊ±»¾Ü¾ø¡£ ErrorCode:01\033[0m\n");
+		printf("\033[1m[\033[1;31m-\033[0m\033[1m] \033[1;31mè®¿é—®è¢«æ‹’ç»ã€‚ ErrorCode:01\033[0m\n");
 		
 		FILE*Command5;
 		Command5=fopen(Cmd_Log_Path,"a");
@@ -2905,14 +2905,14 @@ int main(int argc, char *argv[])
 		
 		FILE*Result5;
 		Result5=fopen(Res_Log_Path,"a");
-		fprintf(Result5,"[%s]\t# %s :(pwsh) ·ÃÎÊ±»¾Ü¾ø¡£ ErrorCode:01 \n",Time_Handel,getcwd(NULL,NULL));
+		fprintf(Result5,"[%s]\t# %s :(pwsh) è®¿é—®è¢«æ‹’ç»ã€‚ ErrorCode:01 \n",Time_Handel,getcwd(NULL,NULL));
 		fclose(Result5);
 		
 		goto Node_01;
 	}
 	if(Target(Ac_Command,OS_Shell_Flag_02)==1)
 	{
-		printf("\033[1m[\033[1;31m-\033[0m\033[1m] \033[1;31m·ÃÎÊ±»¾Ü¾ø¡£ ErrorCode:02\033[0m\n");
+		printf("\033[1m[\033[1;31m-\033[0m\033[1m] \033[1;31mè®¿é—®è¢«æ‹’ç»ã€‚ ErrorCode:02\033[0m\n");
 		
 		FILE*Command6;
 		Command6=fopen(Cmd_Log_Path,"a");
@@ -2921,14 +2921,14 @@ int main(int argc, char *argv[])
 		
 		FILE*Result6;
 		Result6=fopen(Res_Log_Path,"a");
-		fprintf(Result6,"[%s]\t# %s :(cmd) ·ÃÎÊ±»¾Ü¾ø¡£ ErrorCode:02 \n",Time_Handel,getcwd(NULL,NULL));
+		fprintf(Result6,"[%s]\t# %s :(cmd) è®¿é—®è¢«æ‹’ç»ã€‚ ErrorCode:02 \n",Time_Handel,getcwd(NULL,NULL));
 		fclose(Result6);
 		
 		goto Node_01;
 	}
 	if(Target(Ac_Command,OS_Shell_Flag_03)==1)
 	{
-		printf("\033[1m[\033[1;31m-\033[0m\033[1m] \033[1;31m·ÃÎÊ±»¾Ü¾ø¡£ ErrorCode:03\033[0m\n");
+		printf("\033[1m[\033[1;31m-\033[0m\033[1m] \033[1;31mè®¿é—®è¢«æ‹’ç»ã€‚ ErrorCode:03\033[0m\n");
 		
 		FILE*Command7;
 		Command7=fopen(Cmd_Log_Path,"a");
@@ -2937,15 +2937,15 @@ int main(int argc, char *argv[])
 		
 		FILE*Result7;
 		Result7=fopen(Res_Log_Path,"a");
-		fprintf(Result7,"[%s]\t# %s :(exe) ·ÃÎÊ±»¾Ü¾ø¡£ ErrorCode:03 \n",Time_Handel,getcwd(NULL,NULL));
+		fprintf(Result7,"[%s]\t# %s :(exe) è®¿é—®è¢«æ‹’ç»ã€‚ ErrorCode:03 \n",Time_Handel,getcwd(NULL,NULL));
 		fclose(Result7);
 		
 		goto Node_01;
 	}
 	
-//=========================================== ×÷ÓÃÄ£¿é
+//=========================================== ä½œç”¨æ¨¡å—
 	//=====================================================
-	//ÒÔÏÂÎªÄÚÖÃº¯Êı×é
+	//ä»¥ä¸‹ä¸ºå†…ç½®å‡½æ•°ç»„
 	
 	char Built_In_Function_011[4]="pwd",Built_In_Function_012[13]="Get-Location",Built_In_Function_013[3]="gl";
 	char Built_In_Function_021[4]="dir",Built_In_Function_022[4]="gci",Built_In_Function_023[3]="ls",Built_In_Function_024[14]="Get-ChildItem";
@@ -2961,7 +2961,7 @@ int main(int argc, char *argv[])
 	
 	//=====================================================
 	
-	// cd ÃüÁî
+	// cd å‘½ä»¤
 	if(Equal_Case_String(Ac_Command,Built_In_Function_051)==1)
 	{
 		Path_Flag_01=Chroot(Path_Flag_02,Path_Flag_03,Ac_Command,Built_In_Function_051,Path_Flag_01,Home_Path);
@@ -2983,7 +2983,7 @@ int main(int argc, char *argv[])
 		goto Node_01;
 	}
 	
-	// pwd ÃüÁî
+	// pwd å‘½ä»¤
 	if(Target(Ac_Command,Built_In_Function_011)==1 || Target(Ac_Command,Built_In_Function_012)==1 || Target(Ac_Command,Built_In_Function_013)==1)
 	{
 		if(Path_Flag_01!=0)
@@ -3008,7 +3008,7 @@ int main(int argc, char *argv[])
 		goto Node_01;
 	}
 
-	// ls ÃüÁî
+	// ls å‘½ä»¤
 	if(Target(Ac_Command,Built_In_Function_021)==1 || Target(Ac_Command,Built_In_Function_022)==1 || Target(Ac_Command,Built_In_Function_023)==1 || Target(Ac_Command,Built_In_Function_024)==1)
 	{
 		if(Path_Flag_01!=0)
@@ -3023,12 +3023,12 @@ int main(int argc, char *argv[])
 				}
 				else
 				{
-					printf("\n[\033[31m-\033[0m] ¾Ü¾ø·ÃÎÊ¡£\n");
+					printf("\n[\033[31m-\033[0m] æ‹’ç»è®¿é—®ã€‚\n");
 				}
 			}
 			else
 			{
-				printf("\n[\033[31m-\033[0m] ÏµÍ³ÕÒ²»µ½Ö¸¶¨Â·¾¶¡£\n");
+				printf("\n[\033[31m-\033[0m] ç³»ç»Ÿæ‰¾ä¸åˆ°æŒ‡å®šè·¯å¾„ã€‚\n");
 			}
 		}
 		
@@ -3051,7 +3051,7 @@ int main(int argc, char *argv[])
 		goto Node_01;
 	}
 
-	// cat ÃüÁî
+	// cat å‘½ä»¤
 	if(Target(Ac_Command,Built_In_Function_031)==1)
 	{
 		Cat_Detect(Built_In_Function_031,Ac_Command,Path_Flag_02);
@@ -3073,7 +3073,7 @@ int main(int argc, char *argv[])
 		goto Node_01;
 	}
 
-	// cls ÃüÁî
+	// cls å‘½ä»¤
 	if(Target(Ac_Command,Built_In_Function_041)==1 || Target(Ac_Command,Built_In_Function_042)==1 || Target(Ac_Command,Built_In_Function_043)==1)
 	{
 		system("cls");
@@ -3091,10 +3091,10 @@ int main(int argc, char *argv[])
 		goto Node_01;
 	}
 	
-	// whoami ÃüÁî 
+	// whoami å‘½ä»¤ 
 	if(Target(Ac_Command,Built_In_Function_061)==1)
 	{
-		printf("Kali2023\n");
+		printf("Kali\n");
 
 		FILE*Command16;
 		Command16=fopen(Cmd_Log_Path,"a");
@@ -3109,7 +3109,7 @@ int main(int argc, char *argv[])
 		goto Node_01;
 	}
 	
-	// hostname ÃüÁî
+	// hostname å‘½ä»¤
 	if(Target(Ac_Command,Built_In_Function_071)==1)
 	{
 		printf("%s\n",Computer_Name);
@@ -3127,10 +3127,10 @@ int main(int argc, char *argv[])
 		goto Node_01;
 	}
 	
-	// id ÃüÁî
+	// id å‘½ä»¤
 	if(Target(Ac_Command,Built_In_Function_081)==1)
 	{
-		printf("uid=1001(kali2023) gid=1001(kali2023) groups=1001(kali2023),100(users)\n");
+		printf("uid=1001(kali) gid=1001(kali) groups=1001(kali),100(users)\n");
 		
 		FILE*Command18;
 		Command18=fopen(Cmd_Log_Path,"a");
@@ -3146,12 +3146,12 @@ int main(int argc, char *argv[])
 	}
 	
 	/*
-	ÒÔÏÂÃüÁî»áÓë´ÅÅÌ½»»¥£¬ĞëÏŞÖÆÃüÁîÊ¹ÓÃ´ÎÊı¡£
-	 Ä¬ÈÏ¿É´´½¨ÎÄ¼ş¼ĞÊıÄ¿£º5 ¸ö¡£
-	 Ä¬ÈÏ¿É´´½¨ÎÄ¼şÊıÄ¿£º8 ¸ö¡£
+	ä»¥ä¸‹å‘½ä»¤ä¼šä¸ç£ç›˜äº¤äº’ï¼Œé¡»é™åˆ¶å‘½ä»¤ä½¿ç”¨æ¬¡æ•°ã€‚
+	 é»˜è®¤å¯åˆ›å»ºæ–‡ä»¶å¤¹æ•°ç›®ï¼š5 ä¸ªã€‚
+	 é»˜è®¤å¯åˆ›å»ºæ–‡ä»¶æ•°ç›®ï¼š8 ä¸ªã€‚
 	*/
 	
-	// touch ÃüÁî
+	// touch å‘½ä»¤
 	if(Target(Ac_Command,Built_In_Function_091)==1)
 	{
 		if(Time_Monitor_01<8)
@@ -3163,13 +3163,13 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			printf("[\033[31m-\033[0m] %s : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎª¿É´´½¨ÎÄ¼şÊıÁ¿ÒÑ´ïÉÏÏß£¨ÎÄ¼ş*8£©¡£\n",Built_In_Function_091);
+			printf("[\033[31m-\033[0m] %s : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºå¯åˆ›å»ºæ–‡ä»¶æ•°é‡å·²è¾¾ä¸Šçº¿ï¼ˆæ–‡ä»¶*8ï¼‰ã€‚\n",Built_In_Function_091);
 			
 			goto Node_01;
 		}
 	}
 	
-	// mkdir ÃüÁî
+	// mkdir å‘½ä»¤
 	if(Target(Ac_Command,Built_In_Function_101)==1)
 	{
 		if(Time_Monitor_02<5)
@@ -3181,7 +3181,7 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			printf("[\033[31m-\033[0m] %s : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎª¿É´´½¨ÎÄ¼şÊıÁ¿ÒÑ´ïÉÏÏß£¨ÎÄ¼ş¼Ğ*5£©¡£\n",Built_In_Function_101);
+			printf("[\033[31m-\033[0m] %s : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºå¯åˆ›å»ºæ–‡ä»¶æ•°é‡å·²è¾¾ä¸Šçº¿ï¼ˆæ–‡ä»¶å¤¹*5ï¼‰ã€‚\n",Built_In_Function_101);
 			
 			goto Node_01;
 		}
@@ -3197,13 +3197,13 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			printf("[\033[31m-\033[0m] %s : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎª¿É´´½¨ÎÄ¼şÊıÁ¿ÒÑ´ïÉÏÏß£¨ÎÄ¼ş¼Ğ*5£©¡£\n",Built_In_Function_102);
+			printf("[\033[31m-\033[0m] %s : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºå¯åˆ›å»ºæ–‡ä»¶æ•°é‡å·²è¾¾ä¸Šçº¿ï¼ˆæ–‡ä»¶å¤¹*5ï¼‰ã€‚\n",Built_In_Function_102);
 			
 			goto Node_01;
 		}
 	}
 	
-	// rm ÃüÁî
+	// rm å‘½ä»¤
 	if(Target(Ac_Command,Built_In_Function_111)==1)
 	{
 		if(Time_Monitor_01>0 || Time_Monitor_02>0)
@@ -3214,18 +3214,18 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			printf("[\033[31m-\033[0m] rm : ÇëÇóÎŞ·¨Íê³É£¬ÒòÎª´ËÃüÁî²»Ö§³ÖÉ¾³ı»·¾³ÎÄ¼ş¡£\n");
-			printf("    ÈôµÄÈ·ĞèÒª¸ü¸Ä»·¾³ÎÄ¼ş£¬ÇëÊ¹ÓÃ \033[1;4mwipe\033[0m ÃüÁî¡£\n");
+			printf("[\033[31m-\033[0m] rm : è¯·æ±‚æ— æ³•å®Œæˆï¼Œå› ä¸ºæ­¤å‘½ä»¤ä¸æ”¯æŒåˆ é™¤ç¯å¢ƒæ–‡ä»¶ã€‚\n");
+			printf("    è‹¥çš„ç¡®éœ€è¦æ›´æ”¹ç¯å¢ƒæ–‡ä»¶ï¼Œè¯·ä½¿ç”¨ \033[1;4mwipe\033[0m å‘½ä»¤ã€‚\n");
 			
 			goto Node_01;
 		}
 	}
 	
-//=========================================== ¶ªÆúÄ£¿é 
-	// ÆäËûÃüÁî
+//=========================================== ä¸¢å¼ƒæ¨¡å— 
+	// å…¶ä»–å‘½ä»¤
 	printf("\033[1;31m");
-	printf("%s :ÎŞ·¨½«¡°%s¡±ÏîÊ¶±ğÎª cmdlet¡¢º¯Êı¡¢½Å±¾ÎÄ¼ş»ò¿ÉÔËĞĞ³ÌĞòµÄÃû³Æ¡£Çë¼ì²éÃû³ÆµÄÆ´Ğ´£¬Èç¹û°üÀ¨Â·¾¶£¬ÇëÈ·±£Â·¾¶ÕıÈ·£¬È»ºóÔÙÊÔÒ»´Î¡£\n",Ac_Command,Ac_Command);
-	printf("ËùÔÚÎ»ÖÃ ĞĞ:1 ×Ö·û: 1\n");
+	printf("%s :æ— æ³•å°†â€œ%sâ€é¡¹è¯†åˆ«ä¸º cmdletã€å‡½æ•°ã€è„šæœ¬æ–‡ä»¶æˆ–å¯è¿è¡Œç¨‹åºçš„åç§°ã€‚è¯·æ£€æŸ¥åç§°çš„æ‹¼å†™ï¼Œå¦‚æœåŒ…æ‹¬è·¯å¾„ï¼Œè¯·ç¡®ä¿è·¯å¾„æ­£ç¡®ï¼Œç„¶åå†è¯•ä¸€æ¬¡ã€‚\n",Ac_Command,Ac_Command);
+	printf("æ‰€åœ¨ä½ç½® è¡Œ:1 å­—ç¬¦: 1\n");
 	printf("+ %s\n",Ac_Command);
 	printf("+ ");
 	for(Tmp_Flag_03=0;Tmp_Flag_03<strlen(Ac_Command);Tmp_Flag_03++)
@@ -3244,7 +3244,7 @@ int main(int argc, char *argv[])
 		
 	FILE*Result15;
 	Result15=fopen(Res_Log_Path,"a");
-	fprintf(Result15,"[%s]\t# %s : \"%s\"Î´ÔÚº¯Êı×éÖĞ¡£ \n",Time_Handel,getcwd(NULL,NULL),Ac_Command);
+	fprintf(Result15,"[%s]\t# %s : \"%s\"æœªåœ¨å‡½æ•°ç»„ä¸­ã€‚ \n",Time_Handel,getcwd(NULL,NULL),Ac_Command);
 	fclose(Result15);
 		
 	memset(Ac_Command,0,sizeof(Ac_Command));
