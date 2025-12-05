@@ -1,3 +1,5 @@
+# 仓库已迁移至 [Win-SSH-Honeypot-new](https://github.com/kjx52/Win-SSH-Honeypot-new)，此分支不再更新
+
 # Win SSH 蜜罐/SSH-Honeypot For Windows
 
 ### 一个 SSH蜜罐的快速部署脚本，基于Windows-OpenSSH。
